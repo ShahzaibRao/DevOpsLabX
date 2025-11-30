@@ -8,27 +8,52 @@ Build a rock-solid foundation for your DevOps career by mastering the essentials
 
 ## 📚 What's Inside
 
-### 🐧 **Linux** (14 Tutorials)
+### 🐧 **Linux** (57 Tutorials)
 Master Linux system administration from the ground up — the essential foundation for every DevOps engineer.
 
 **Topics Covered:**
-- Lab setup with Proxmox & Cloud-Init automation
-- Command line mastery & shell fundamentals
-- File operations, permissions & security (ACLs, special bits)
-- User & group management
-- Process control & system monitoring
-- Disk management & filesystem configuration
+- **Fundamentals**: Lab setup with Proxmox & Cloud-Init, command line mastery, shell fundamentals
+- **File Management**: File operations, globbing, permissions & security (ACLs, special bits)
+- **User Administration**: User & group management, authentication
+- **Process Control**: Process management, system monitoring, performance tuning
+- **Storage Management**: Disk management, filesystem configuration (ext2/3/4, XFS)
+- **Advanced Storage**: LVM (snapshots, thin provisioning, migration, merge/split, restoration)
+- **RAID Systems**: RAID-0, RAID-1, RAID-5, RAID-6, RAID-10 configuration & management
+- **Advanced Disk Features**: VDO compression, disk quotas, LUKS encryption
+- **System Administration**: Kernel management, boot recovery, kernel panic resolution
+- **Logging & Performance**: System logging, performance monitoring & tuning
+- **Package Management**: RPM, DNF, APT, source compilation
+- **Networking**: nmcli configuration, NIC teaming, firewalld
+- **Virtualization**: KVM setup & management, Cockpit web dashboard
+- **Security**: SELinux (contexts, MLS/MCS, troubleshooting, file contexts)
+- **Services**: DNS (BIND), Apache with multi-site SSL, MySQL, Squid proxy, load balancing, Nginx, NFS
+- **DevOps Tools**: Git fundamentals, version control
 
-### ☸️ **Kubernetes** (13 Tutorials)
-Learn Kubernetes Pod lifecycle, resource management, and real-world troubleshooting.
+### ☸️ **Kubernetes** (68 Tutorials)
+Comprehensive Kubernetes learning from Pod basics to production-ready deployments and advanced networking.
 
 **Topics Covered:**
-- Pod fundamentals & YAML structure
-- Container ports & networking basics
-- Init containers & secrets management
-- Resource requests & limits (CPU/Memory)
-- Quality of Service (QoS) classes
-- Troubleshooting: Pending pods, OOMKilled errors, scheduling issues
+- **Pod Fundamentals**: Pod lifecycle, YAML structure, container ports & networking
+- **Pod Configuration**: Init containers, secrets management, environment variables
+- **Resource Management**: CPU/Memory requests & limits, Quality of Service (QoS) classes
+- **QoS Deep Dive**: BestEffort, Burstable, and Guaranteed classes
+- **Troubleshooting**: Pending pods, OOMKilled errors, scheduling issues, debugging techniques
+- **Scheduling & Placement**: Node selection, nodeSelector, nodeName, node affinity (required/preferred)
+- **Advanced Scheduling**: Taints & tolerations, pod anti-affinity, NotIn operator
+- **Priority & Preemption**: Pod priority classes, preemption policies
+- **Deployments**: Replica management, rolling updates, production best practices
+- **Update Strategies**: RollingUpdate vs Recreate, maxSurge, maxUnavailable
+- **Autoscaling**: Horizontal Pod Autoscaler (HPA v1 & v2), autoscaling strategies
+- **Health & Lifecycle**: Liveness probes, readiness probes, lifecycle hooks
+- **Services**: ClusterIP, NodePort, service discovery, load balancing
+- **Resource Governance**: ResourceQuotas, LimitRange (CPU/Memory constraints)
+- **Storage**: emptyDir, hostPath, PersistentVolumeClaims (PVC), dynamic provisioning
+- **Configuration Management**: ConfigMaps, Secrets, volume mounts, stringData best practices
+- **Security**: ConfigMap/Secret immutability, access control
+- **Network Policies**: Ingress/egress rules, default deny policies, pod isolation
+- **Advanced Networking**: NetworkPolicy troubleshooting, complex rule combinations
+- **Ingress Controllers**: Traefik routing (K3s), TLS/SSL configuration, path-based routing
+- **Ingress Advanced**: Annotations, Gateway API preview, future of K8s networking
 
 ---
 
@@ -46,25 +71,46 @@ Learn Kubernetes Pod lifecycle, resource management, and real-world troubleshoot
 ### 🌱 **Complete Beginner Path**
 
 ```
-Linux Basics → Shell Mastery → System Admin → Kubernetes Pods → Resource Management → Troubleshooting
+Linux Basics → Shell Mastery → System Admin → Storage → Kubernetes Pods → Resource Management → Deployments → Networking
 ```
 
 **Recommended Order:**
-1. **Linux 01-02**: Lab setup + Why Linux matters for DevOps
-2. **Linux 03-09**: Command line & shell fundamentals
-3. **Linux 010-014**: Users, security, processes, storage
-4. **Kubernetes 1.1-1.2**: Pod basics & networking
-5. **Kubernetes 3.1-3.4**: Resource management & QoS
-6. **Kubernetes 4.1-4.2**: Troubleshooting common issues
+1. **Linux/01-Basics**: Lab setup, command line & shell fundamentals
+2. **Linux/02-System-Administration**: Users, security, processes, basic storage
+3. **Linux/03-Advanced-Storage**: Filesystems, LVM, RAID
+4. **Kubernetes/01-Pod-Fundamentals**: Pod basics, init containers, secrets
+5. **Kubernetes/02-Resource-Management**: Resource management, QoS, troubleshooting
+6. **Kubernetes/04-Deployments-Scaling**: Deployments, scaling, autoscaling
+7. **Kubernetes/05-Health-Services**: Health probes, services
 
 ### 🔄 **Linux Admin → Kubernetes Path**
 
-Already comfortable with Linux? Jump straight to Kubernetes:
+Already comfortable with Linux? Jump to Kubernetes with this focused path:
 
-1. **Quick Review**: Linux 011-014 (security, processes, disks)
-2. **K8s Fundamentals**: 1.1-1.2 (Pods, ports, namespaces)
-3. **Resource Management**: 3.1-3.4 (requests/limits, QoS)
-4. **Troubleshooting**: 4.1-4.2 (Pending pods, OOMKilled)
+1. **Quick Review**: Linux/04-System-Management (logging, performance, packages)
+2. **K8s Fundamentals**: Kubernetes/01-Pod-Fundamentals (Pods, ports, init containers)
+3. **Resource Management**: Kubernetes/02-Resource-Management (requests/limits, QoS classes)
+4. **Scheduling**: Kubernetes/03-Scheduling (node selection, affinity, taints)
+5. **Production Ready**: Kubernetes/04-Deployments-Scaling (Deployments, HPA, rolling updates)
+6. **Networking**: Kubernetes/09-Network-Policies (NetworkPolicy, Ingress)
+
+### 🚀 **Advanced DevOps Path**
+
+For experienced practitioners looking to master advanced topics:
+
+**Linux Advanced:**
+1. **Storage Deep Dive**: Linux/03-Advanced-Storage (LVM, RAID, VDO, quotas, LUKS)
+2. **System Hardening**: Linux/06-Virtualization-Security (SELinux mastery)
+3. **Networking**: Linux/05-Networking (nmcli, NIC teaming, firewalld)
+4. **Services**: Linux/07-Services (DNS, web servers, load balancing, monitoring)
+
+**Kubernetes Advanced:**
+1. **Advanced Scheduling**: Kubernetes/03-Scheduling (Anti-affinity, priority, preemption)
+2. **Production Deployments**: Kubernetes/04-Deployments-Scaling (Best practices, HPA v2, troubleshooting)
+3. **Resource Governance**: Kubernetes/06-Resource-Governance (ResourceQuotas, LimitRange)
+4. **Storage**: Kubernetes/07-Storage (PVC, dynamic provisioning, scaling)
+5. **Configuration**: Kubernetes/08-Configuration (ConfigMaps, Secrets, best practices)
+6. **Network Security**: Kubernetes/09-Network-Policies (NetworkPolicy, isolation, troubleshooting)
 
 ---
 
@@ -73,36 +119,152 @@ Already comfortable with Linux? Jump straight to Kubernetes:
 ```
 DevOpsLabX/
 │
-├── Linux/                          # 14 Linux tutorials
-│   ├── 01 - Build_a_Proxmox_VM_Factory.md
-│   ├── 02 - RHCSA__DevOps_Foundation.md
-│   ├── 03 - Mastering_the_Linux_CLI.md
-│   ├── 04 - Command_Line_Demystified.md
-│   ├── 05 - Working_with_Files_in_Linux.md
-│   ├── 06 - Linux_Shell_Fundamentals.md
-│   ├── 07 - Linux_Control_Operators.md
-│   ├── 08 - Shell__Variables___History.md
-│   ├── 09 - Mastering_File_Globbing.md
-│   ├── 010 - Linux_User___Group_Guide.md
-│   ├── 011 - File_Security_in_Linux.md
-│   ├── 012 - Mastering_Linux_Processes.md
-│   ├── 013 - Mastering_Linux_Disks.md
-│   └── 014 - Linux_Filesystem_Management.md
+├── Linux/                          # 57 Linux tutorials
+│   ├── Basics (01-09)
+│   │   ├── 01 - Build_a_Proxmox_VM_Factory.md
+│   │   ├── 02 - RHCSA__DevOps_Foundation.md
+│   │   ├── 03 - Mastering_the_Linux_CLI.md
+│   │   ├── 04 - Command_Line_Demystified.md
+│   │   ├── 05 - Working_with_Files_in_Linux.md
+│   │   ├── 06 - Linux_Shell_Fundamentals.md
+│   │   ├── 07 - Linux_Control_Operators.md
+│   │   ├── 08 - Shell__Variables___History.md
+│   │   └── 09 - Mastering_File_Globbing.md
+│   │
+│   ├── System Administration (010-014)
+│   │   ├── 010 - Linux_User___Group_Guide.md
+│   │   ├── 011 - File_Security_in_Linux.md
+│   │   ├── 012 - Mastering_Linux_Processes.md
+│   │   ├── 013 - Mastering_Linux_Disks.md
+│   │   └── 014 - Linux_Filesystem_Management.md
+│   │
+│   ├── Advanced Storage (015-030)
+│   │   ├── 015 - Linux_FS_Migration__EXT2-EXT4.md
+│   │   ├── 016 - Mastering_Linux_Storage.md
+│   │   ├── 017-023 - LVM (Resizing, Snapshots, Restore, Merge/Split, Migration, Thin Provisioning)
+│   │   ├── 024-028 - RAID (RAID-0, RAID-1, RAID-5, RAID-6, RAID-10)
+│   │   ├── 029 - Getting_Started_with_VDO.md
+│   │   ├── 030 - Disk_Quota_Management.md
+│   │   └── 031 - Disk_Encryption_with_LUKS.md
+│   │
+│   ├── System Management (032-037)
+│   │   ├── 032 - Resolving_Kernel_Panic.md
+│   │   ├── 033 - CentOS_8__boot_Recovery.md
+│   │   ├── 034 - RHEL_8_Kernel_Installation.md
+│   │   ├── 035 - Mastering_Linux_Logs.md
+│   │   ├── 036 - Linux_Perf.md
+│   │   └── 037 - Linux_Package_Management.md
+│   │
+│   ├── Networking (038-041)
+│   │   ├── 038 - RHEL_9_Networking__nmcli.md
+│   │   ├── 039 - RHEL_9_nmcli_Guide.md
+│   │   ├── 040 - RHEL_9_NIC_Teaming.md
+│   │   └── 041 - Firewalld_Fundamentals.md
+│   │
+│   ├── Virtualization & Security (042-048)
+│   │   ├── 042 - Cockpit__Server_Web_Dashboard.md
+│   │   ├── 043 - KVM__Zero_to_Host.md
+│   │   └── 044-048 - SELinux (Fundamentals, File Contexts, MLS/MCS)
+│   │
+│   └── Services (049-058)
+│       ├── 049 - DNS_Config_in_Linux_w__BIND.md
+│       ├── 050 - Apache__Multi-Site_SSL.md
+│       ├── 051 - MySQL_Server_on_RHEL_8.md
+│       ├── 052 - Squid_Proxy_Configuration.md
+│       ├── 053 - Building_a_Web_Load_Balancer.md
+│       ├── 054 - Unlocking_Nginx.md
+│       ├── 056 - Setting_Up_NFS.md
+│       ├── 057 - Monitoring_Linux_Systems.md
+│       └── 058 - Git__The_Dev_s_Time_Machine.md
 │
-└── Kubernetes/                     # 13 Kubernetes tutorials
-    ├── 1.1 Demystifying_Kubernetes_Pods.md
-    ├── 1.2 K8s_Ports__Myth_vs.md
-    ├── 2.1 Kubernetes_Init_Containers.md
-    ├── 2.2 Kubernetes_Pod_Passwords.md
-    ├── 3.1 K8s__Taming_App_Resources.md
-    ├── 3.1 Requests vs. Limits.md
-    ├── 3.2 K8s_QoS__BestEffort_s_Risk.md
-    ├── 3.3 Kubernetes__Burstable_Pods.md
-    ├── 3.4 Guaranteed_QoS_Class.md
-    ├── 4.1 The_Pending_Pod.md
-    ├── 4.2 The_Case_of_the_Pending_Pod.md
-    ├── 4.2 Kubernetes_OOMKilled_Guide.md
-    └── 5.1 The_`nodeName`_Trap.md
+└── Kubernetes/                     # 68 Kubernetes tutorials
+    ├── Pod Fundamentals (1.x-2.x)
+    │   ├── 1.1 Demystifying_Kubernetes_Pods.md
+    │   ├── 1.2 K8s_Ports__Myth_vs.md
+    │   ├── 2.1 Kubernetes_Init_Containers.md
+    │   └── 2.2 Kubernetes_Pod_Passwords.md
+    │
+    ├── Resource Management (3.x)
+    │   ├── 3.1 K8s__Taming_App_Resources.md
+    │   ├── 3.1 Requests vs. Limits.md
+    │   ├── 3.2 K8s_QoS__BestEffort_s_Risk.md
+    │   ├── 3.3 Kubernetes__Burstable_Pods.md
+    │   └── 3.4 Guaranteed_QoS_Class.md
+    │
+    ├── Troubleshooting (4.x)
+    │   ├── 4.1 The_Pending_Pod.md
+    │   └── 4.2 Kubernetes_OOMKilled_Guide.md
+    │
+    ├── Scheduling & Placement (5.x)
+    │   ├── 5.1 The_`nodeName`_Trap.md
+    │   ├── 5.2 K8s_Node_Selection.md
+    │   ├── 5.3-5.4 - Node Affinity (Required/Preferred)
+    │   ├── 5.5 Kubernetes__The_NotIn_Operator.md
+    │   ├── 5.6 K8s_Pod_Anti-Affinity.md
+    │   ├── 5.7 Kubernetes_Affinity__Power_of_OR.md
+    │   ├── 5.8 Taints___Tolerations.md
+    │   └── 5.9 Pod_Priority_&_Preemption.md
+    │
+    ├── Deployments & Scaling (6.x)
+    │   ├── 6.1 Kubernetes_Deployments.md
+    │   ├── 6.2 Kubernetes__Orders_vs_Goals.md
+    │   ├── 6.3 Production-Ready_K8s.md
+    │   ├── 6.4 Kubernetes_Rolling_Updates.md
+    │   ├── 6.5 K8s__Pod_Anti-Affinity.md
+    │   ├── 6.6 K8s__Deployments_vs_Services.md
+    │   ├── 6.7 Default_to_Defended.md
+    │   ├── 6.8 Mastering_Kubernetes_HPA.md
+    │   ├── 6.9 Kubernetes_HPA__V1_to_V2.md
+    │   ├── 6.10 Taming_Kubernetes_Autoscaling.md
+    │   └── 6.11 Kubernetes_Troubleshooting.md
+    │
+    ├── Health & Services (7.x)
+    │   ├── 7.1 Kubernetes_Liveness_Probes.md
+    │   ├── 7.2 K8s_Health_Probes.md
+    │   ├── 7.3 Mastering_Lifecycle_Hooks.md
+    │   ├── 7.4 Mastering_ClusterIP_Service.md
+    │   └── 7.5 Unlocking_k3s_with_NodePort.md
+    │
+    ├── Resource Governance (8.x)
+    │   ├── 8.1 Taming_K8s_ResourceQuotas.md
+    │   ├── 8.2 Kubernetes_Resource_Quotas.md
+    │   ├── 8.3 K8s_LimitRange_Rulebook.md
+    │   ├── 8.4 K8s__The_CPU_LimitRange.md
+    │   └── 8.5 K8s_Memory_LimitRange.md
+    │
+    ├── Storage (9.x)
+    │   ├── 9.1 Kubernetes__The_emptyDir_Volume.md
+    │   ├── 9.2 Kubernetes__The_Shared_Mailbox.md
+    │   ├── 9.3 hostPath__A_Double-Edged_Sword.md
+    │   ├── 9.4 Kubernetes_hostPath_Deception.md
+    │   ├── 9.5 PVC__Storage_Matchmaker.md
+    │   ├── 9.6 Dynamic_Kubernetes_Storage.md
+    │   ├── 9.7 The_K8s_Scaling_Trap.md
+    │   └── 9.8 The_Ultimate_NodePort_Guide.md
+    │
+    ├── Configuration (11.x)
+    │   ├── 11.1 Kubernetes_ConfigMaps.md
+    │   ├── 11.2 Kubernetes_Secrets.md
+    │   ├── 11.3 K8s_Config__Volume_Mounts.md
+    │   ├── 11.4 Always_Use_`stringData`.md
+    │   ├── 11.5 Lock_Down_K8s_Configs.md
+    │   └── 11.6 K8s_Config___Secrets.md
+    │
+    ├── Network Policies (12.x)
+    │   ├── 12.1 Kubernetes_NetworkPolicy.md
+    │   ├── 12.2 Kubernetes_NetworkPolicy.md
+    │   ├── 12.3 Kubernetes_Egress_Rules.md
+    │   ├── 12.4 Kubernetes_Default_Deny.md
+    │   ├── 12.5 Advanced_NetworkPolicy.md
+    │   └── 12.6 NetworkPolicy_Troubleshooting.md
+    │
+    └── Ingress (13.x)
+        ├── 13.1 Ingress__Cluster_Front_Door.md
+        ├── 13.2 K3s_Ingress_Routing_with_Traefik.md
+        ├── 13.3 Securing_Kubernetes_Ingress.md
+        ├── 13.4 Ingress_Path-Based_Routing.md
+        ├── 13.5 Ingress__Power_of_Annotations.md
+        └── 13.6 Future_of_K8s_Networking.md
 ```
 
 ---
@@ -219,54 +381,6 @@ This repository aligns with industry-recognized certifications:
 - **QoS classes** — BestEffort, Burstable, Guaranteed
 - **Troubleshooting patterns** — Reading events, understanding exit codes
 - **Best practices** — Labels, namespaces, resource management
-
----
-
-## 🌟 What Makes This Repository Different
-
-✨ **Integrated Learning** — Linux + Kubernetes in one place  
-✨ **Lab-First Approach** — Every concept has hands-on exercises  
-✨ **Troubleshooting Focus** — Dedicated guides for common failures  
-✨ **Production-Ready** — Best practices and real-world warnings  
-✨ **Progressive Complexity** — From basics to advanced topics  
-✨ **Self-Contained** — No need to jump between multiple resources  
-
----
-
-## 🚧 Roadmap
-
-This repository is actively growing! Upcoming topics:
-
-### **Linux (Coming Soon)**
-- [ ] Advanced shell scripting & automation
-- [ ] systemd service management
-- [ ] Networking fundamentals (routing, firewalls)
-- [ ] LVM (Logical Volume Management)
-- [ ] SELinux configuration
-- [ ] Performance tuning & monitoring
-
-### **Kubernetes (Coming Soon)**
-- [ ] Deployments & ReplicaSets
-- [ ] Services & Ingress
-- [ ] ConfigMaps & Secrets (advanced)
-- [ ] StatefulSets & Persistent Volumes
-- [ ] RBAC & Security
-- [ ] Helm & package management
-- [ ] Monitoring with Prometheus & Grafana
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! If you'd like to add tutorials, fix errors, or improve content:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-tutorial`)
-3. Follow the existing tutorial format:
-   - Clear explanations
-   - Hands-on lab exercises
-   - Safety warnings where applicable
-   - Cheat sheets/summary tables
 4. Commit your changes (`git commit -m 'Add tutorial on X'`)
 5. Push to the branch (`git push origin feature/new-tutorial`)
 6. Open a Pull Request
